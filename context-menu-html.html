@@ -1,9 +1,41 @@
-<!DOCTYPE Html>
+<!DOCTYPE html>
 <html>
+
+<head>
+	<title>Menu de Contexto</title>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<meta name="author" content="Leandro Santos">
+	<meta name="description" content="Criação de menu de contexto que acompanha ao click do mouse">
+	<link rel="stylesheet" type="text/css" href="context.css">
+	<script src="jquery-3.4.1.min.js"></script>
+</head>
+
 <body>
-					<div class="dropdown-menu dropdown-menu-sm" id="context-menu">
-                    <a class="dropdown-item" context-menu="menu($event)">Executar</a>
-					</div>
-					
+	<!--Area com permissão do menu de contexto-->
+	Context Area
+	<div class="context-area">
+
+	</div>
+
+
+	<div class="dropdown-menu">
+		<a href="#">Ação A</a>
+		<a href="#">Ação B</a>
+		<a href="#">Ação C</a>
+		<a href="#">Ação D</a>
+	</div>
+
+
+	<!--Script para habilitar o menu-->
+	<script>
+			$(".context-area").contextmenu(function(e){
+
+
+				//desabilita o menu do browser
+				return false;
+			})
+	</script>
+
 </body>
+
 </html>
