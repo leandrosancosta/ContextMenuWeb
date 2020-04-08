@@ -12,7 +12,6 @@
 
 <body>
 	<!--Area com permissão do menu de contexto-->
-	Context Area
 	<div class="context-area">
 
 	</div>
@@ -29,10 +28,21 @@
 	<!--Script para habilitar o menu-->
 	<script>
 			$(".context-area").contextmenu(function(e){
-
-
-				//desabilita o menu do browser
+				{
+					if(!$(".dropdown-menu")[0].style.display.includes("block")){
+						$(".dropdown-menu")[0].style.display = "none"
+					}
+						$(".dropdown-menu")[0].style.display = "block";
+						$(".dropdown-menu")[0].style.top = `${e.pageY}px`;
+						$(".dropdown-menu")[0].style.left = `${e.pageX}px`;
+					
+				}
 				return false;
+			});
+			$(".context-area").click(function(){
+				if($(".dropdown-menu")[0].style.display.includes("block")){
+						$(".dropdown-menu")[0].style.display = "none"
+					}
 			})
 	</script>
 
